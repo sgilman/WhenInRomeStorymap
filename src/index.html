@@ -423,18 +423,45 @@
 			}
 			
 			#map-onoff {
-				display:none;
-				position:fixed;
-				height: 10px;
-				z-index:1000;
-				width: 100px;
-				background-color:white;
+				position: fixed;
+				top:0;
+				left: 20px;
+				background-color: rgb(0, 0, 0);
+				opacity: 0.8;
+				border-bottom-left-radius: 8px;
+				border-bottom-right-radius: 8px;
+				border-collapse: collapse;
+				box-sizing:	border-box;
+				color: rgb(255, 255, 255)
+				display: block;
+				z-index: 9999;
+				padding: 5px 5px 5px 5px;
 				}
 			.intro-icon {
 				display: inline;
-				width:15px;
+				width:20px;
 				margin: -10 -10 -10 -10;
 				padding:0px;
+				line-height: 1px;
+				vertical-align: middle;
+				}
+			#intro-icon-span .image-wrapper {
+				display: inline;
+				height:0px;
+				margin: 0 0 0 0;
+				padding: 0 0 0 0;
+				line-height: 0px;
+				size: 8pt;
+				min-height:0px;
+				min-width: 0px;
+				}
+				
+			.esriSimpleSliderTL {
+				top: 40px;
+				left: 20px;
+				}
+			img {
+				opacity:1 !important;
 				}
 		</style>
 		
@@ -479,7 +506,7 @@
 					 * Custom Javascript to be executed when the application is ready goes here
 					 */
 					 
-
+					 console.log($('.legend').offset().left);
 					 
 					 var sectionlist = ['', '', 'pcc', 'boc', 'sgl', 'col', 'con', 'tit', 'bcm', 'for', 'ss', 'sm', 'pds', 'tre', 'pan', 'csa', 'tcm'];
 					 
@@ -535,8 +562,8 @@
 					
 							navnums();
 						
-						$('#map-onoff').css({top: $('div.titleBtn').offset().top - 50 + 'px', left: $('div.titleBtn').offset().left, width: $('div.titleBtn').width()});
-						$('#map-onoff').show();
+					//	$('#map-onoff').css({top: $('div.titleBtn').offset().top - 50 + 'px', left: $('div.titleBtn').offset().left, width: $('div.titleBtn').width()});
+						//$('#map-onoff').show();
 							
 							if (index > 1 && index < 17) {
 								tnpos(sectionlist[index]);
